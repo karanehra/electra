@@ -1,8 +1,8 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
 export default function connectToDB(): void {
   const { MONGO_HOST, MONGO_PORT, MONGO_DB } = process.env
-  const DB_URI = [[MONGO_HOST, MONGO_PORT].join(":"), MONGO_DB].join("/")
+  const DB_URI = [[MONGO_HOST, MONGO_PORT].join(':'), MONGO_DB].join('/')
 
   const options = {
     useNewUrlParser: true,
@@ -11,9 +11,9 @@ export default function connectToDB(): void {
 
   try {
     mongoose.connect(DB_URI, options)
-    console.log("db connected")
+    console.log('db connected')
   } catch {
-    console.error("db connect prob")
+    console.error('db connect prob')
     process.exit(1)
   }
 }

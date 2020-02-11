@@ -1,7 +1,6 @@
-import * as express from "express"
+import * as express from 'express'
+import userRouter from './user.router'
 
 export const registerRoutes = (app: express.Application) => {
-  app.get("/", (req, res) => {
-    res.send("Hello")
-  })
+  app.use('/user', userRouter)
 }
