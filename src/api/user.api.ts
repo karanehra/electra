@@ -64,3 +64,10 @@ export const signupController = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'An error occured' })
   }
 }
+
+/**
+ * Handles user subscruption
+ */
+export const subscriptionController = async (req: Request, res: Response) => {
+  res.send(200)
+}
