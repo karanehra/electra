@@ -11,7 +11,6 @@ export const loginController = async (req: Request, res: Response) => {
     res.status(400).json({ message: 'Payload validation error' })
     return
   }
-
   const { username = '', password } = req.body
 
   const user = await User.findOne({ username }).lean()
@@ -19,7 +18,6 @@ export const loginController = async (req: Request, res: Response) => {
     res.status(404).json({ message: 'User Not Found' })
     return
   }
-
   if (user.password === hashPassword(password)) {
     delete user.password
     const token = sign(

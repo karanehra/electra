@@ -5,7 +5,7 @@ interface IUser extends Document {
   lastName: string
   username: string
   password: string
-  subscriptions?: Array<String>
+  subscriptions?: string[]
 }
 
 const UserSchema = new Schema({
