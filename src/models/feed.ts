@@ -14,6 +14,6 @@ const FeedSchema = new Schema({
   tags: [String]
 })
 
-const Feed = model<IFeed>('user', FeedSchema)
+const Feed = model<IFeed>('feeds', FeedSchema)
 
 export default Feed
