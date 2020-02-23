@@ -67,5 +67,23 @@ export const signupController = async (req: Request, res: Response) => {
  * Handles user subscruption
  */
 export const subscriptionController = async (req: Request, res: Response) => {
+  if (!req.body) {
+    return res.status(400).send({ message: 'Invalid Payload' })
+  }
+  const { feedID, userID } = req.body
+  if (!feedID) {
+    return res.status(400).send({ message: 'Please provide feedID' })
+  }
+  if (!userID) {
+    return res.status(400).send({ message: 'Please provide userID' })
+  }
+
+  const user = await User.findById(userID)
+
+  if (user) {
+  } else {
+    return res.status(400).send({ message: 'User not found' })
+  }
+
   res.send(200)
 }
