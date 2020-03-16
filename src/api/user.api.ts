@@ -80,8 +80,7 @@ export const subscriptionController = async (req: Request, res: Response) => {
 
   const user = await User.findById(userID)
 
-  if (user) {
-  } else {
+  if (!user) {
     return res.status(400).send({ message: 'User not found' })
   }
 
