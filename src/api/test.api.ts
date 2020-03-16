@@ -6,7 +6,7 @@ import Article from '../models/article'
 export const testController = async (req: Request, res: Response) => {
   const data = await Article.find()
   data.forEach(datum => {
-    console.log(datum.title)
+    console.log(datum.url)
   })
   res.sendStatus(200)
 }
