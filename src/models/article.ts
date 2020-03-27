@@ -13,12 +13,12 @@ interface IArticle extends Document {
   feedDescription: string
   feedURL: string
   content: string
+  createdAt: string
 }
 
 const ArticleSchema = new Schema({
   title: String,
   description: String,
-  url: String,
   tags: [String],
   feedTitle: String,
   updated: String,
@@ -27,7 +27,8 @@ const ArticleSchema = new Schema({
   urlHash: String,
   feedDescription: String,
   feedURL: String,
-  content: String
+  content: String,
+  createdAt: String
 })
 
 const Article = model<IArticle>('articles', ArticleSchema)
