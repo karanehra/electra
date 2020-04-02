@@ -21,6 +21,6 @@ export const testController = async (req: Request, res: Response) => {
       }
     }
   })
-  console.log(valid, invalid, dataObj)
+
   res.sendStatus(200)
 }
